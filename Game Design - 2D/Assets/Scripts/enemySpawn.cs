@@ -6,9 +6,11 @@ public class enemySpawn : MonoBehaviour
 {
     public GameObject enemy;
     float randx;
+    float randy;
     Vector2 whereToSpawn;
     public float spawnRate = 2f;
     float nextSpawn = 0.0f;
+    int spawnPlaceNumb;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,26 @@ public class enemySpawn : MonoBehaviour
     {
         if(Time.time > nextSpawn) {
 
+            spawnPlaceNumb = Random.Range(1, 3);
+
+            switch(spawnPlaceNumb) {
+
+                case 1:
+                    randx = Random.Range(-55f, -77f);
+                    randy = Random.Range(23f, 30f);
+                    break;
+                case 2:
+                    randx = Random.Range(-60f, -70f);
+                    randy = Random.Range(80f, 70f);
+                    break;
+                case 3:
+                    randx = Random.Range(-15f, -30f);
+                    randy = Random.Range(47f, 40f);
+                    break;                              
+            }
+
             nextSpawn = Time.time + spawnRate;
-            randx = Random.Range(-80f, -40f);
-            whereToSpawn = new Vector2(randx, transform.position.y);
+            whereToSpawn = new Vector3(randx, randy, transform.position.y);
             Instantiate(enemy, whereToSpawn, Quaternion.identity);
         }
     }

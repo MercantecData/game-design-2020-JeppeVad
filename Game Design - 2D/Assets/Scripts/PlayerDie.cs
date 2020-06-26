@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerDie : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject gameOverText, restartButton;
+    public GameObject gameOverText, restartButton, leaderboardButton;
     void Start()
     {
+        pointCounter.scoreValue = 0;
         gameOverText.SetActive(false);
         restartButton.SetActive(false);   
+        leaderboardButton.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class PlayerDie : MonoBehaviour
         if(col.gameObject.tag.Equals("Enemy")) {
             gameOverText.SetActive(true);
             restartButton.SetActive(true);
+            leaderboardButton.SetActive(true);
             gameObject.SetActive(false);
         }
     }

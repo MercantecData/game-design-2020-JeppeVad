@@ -12,14 +12,11 @@ public class Bullets : MonoBehaviour
         Destroy(effect, 0.5f);
         Destroy(gameObject);
         DestroyImmediate(Enemy, true);
-        /*
-        
-        getComponent<enemy>();
 
-        if(gameObject )
         
         
-        */
+        
+
     }
 
 }

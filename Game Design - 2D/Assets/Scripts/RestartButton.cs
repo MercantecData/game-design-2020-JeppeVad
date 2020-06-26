@@ -20,4 +20,9 @@ public class RestartButton : MonoBehaviour
 
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void leaderBoardScene() {
+
+        SceneManager.LoadScene("LeaderBoardScene");
+    }
 }

@@ -19,7 +19,7 @@ public class CameraFollow2 : MonoBehaviour
         var playerPos = player.position;
         playerPos.z = transform.position.z;
         
-        var target = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, 0.5f);
+        var target = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, 0.1f);
         transform.position = target;
 
     }
